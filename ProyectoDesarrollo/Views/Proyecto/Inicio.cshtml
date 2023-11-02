@@ -1,0 +1,64 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<html>
+    <head>
+        <link href="~/css/Estilos.css" rel="stylesheet" />
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script src="https://kit.fontawesome.com/fc0e7e3519.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <header>
+            <h1>Mi otra cabecera</h1>
+        </header>
+        <div class="otraCabecera">
+            <label class="IniciarSesion">Clínica SaludTotal</label>
+            <i class="fas fa-clinic-medical"></i>
+        </div>
+        
+        <form>
+        <div class="h1">
+            <label>Seleccione su método de inicio de sesión </label>
+            <i class="fas fa-sign-in-alt"></i>
+        </div>
+        <div class="Secretaria">
+            <div class="icon">
+                <i class="fa fa-female"></i> 
+            </div>
+            <hr>
+            <label>Secretaria</label><br />
+            <a asp-action="InSecretaria">Ingresar>></a>
+        </div>
+
+        <div class="Doctor">
+            <div class="icon">
+                <i class="fa fa-user-md"></i>
+            </div>
+            <hr>
+            <label >Doctor</label><br /> 
+            <a  asp-action="InDoctor">Ingresar>></a>
+        </div>
+
+        <div class="Paciente">
+            <div class="icon">
+                <i class="fa fa-users"></i>
+            </div>
+            <hr>
+            <label >Paciente</label><br />
+            <a  asp-action="InPaciente">Ingresar>></a>
+        </div>
+
+        <div class="Administrador">
+            <div class="icon">
+                <i class="fa fa-male"></i>
+            </div>
+            <hr>
+            <label >Administrador</label><br />
+            <a  asp-action="InAdministrador">Ingresar>></a>
+        </div>
+    </form>
+    </body>
+</html>

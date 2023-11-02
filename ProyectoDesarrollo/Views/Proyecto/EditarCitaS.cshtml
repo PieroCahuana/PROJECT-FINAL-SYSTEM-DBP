@@ -1,0 +1,77 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model ProyectoDesarrollo.Models.Cita
+@{
+}
+<html>
+<head>
+    <link href="~/css/agregar.css" rel="stylesheet" />
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://kit.fontawesome.com/fc0e7e3519.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="otraCabecera">
+        <label class="IniciarSesion">Clínica SaludTotal</label>
+        <i class="fas fa-clinic-medical"></i>
+    </div>
+        <form class="row g-3" asp-controller="Proyecto" asp-action="GrabarCita">
+            <div class="col-md-6">
+                <input type="hidden" asp-for="IdCitas" placeholder="Ingrese el codigo" />
+                <label class="form-label genDL">PACIENTE</label>
+                <select class="form-select genD" asp-for="IdPaciente">
+                    <option value="" selected disabled>Seleccione un paciente</option>
+                    @foreach (var paciente in ViewBag.pacientes)
+                    {
+                        var paciente1 = (ProyectoDesarrollo.Models.Paciente)paciente;
+                        <option value="@paciente1.IdPaciente">@paciente1.NomPaciente</option>
+                    }
+                </select>
+                <label class="form-label genDL">ESTADO DE PACIENTE</label>
+                <select class="form-select genD" asp-for="IdEstados">
+                    <option value="" selected disabled>Seleccione estado del paciente</option>
+                    @foreach (var estado in ViewBag.estados)
+                    {
+                        var estado1 = (ProyectoDesarrollo.Models.Estado)estado;
+                        <option value="@estado1.IdEstados">@estado1.NomEstados</option>
+                    }
+                </select>
+                <label class="form-label genDL">ESPECIALIDAD</label>
+                <select class="form-select genD" asp-for="IdEspecialidad">
+                    <option value="" selected disabled>Seleccione especialidad</option>
+                    @foreach (var especialidad in ViewBag.especDoc)
+                    {
+                        var especialidad1 = (ProyectoDesarrollo.Models.Especialidad)especialidad;
+                        <option value="@especialidad1.IdEspecialidad">@especialidad1.NomEspecialidad</option>
+                    }
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label genDL">DOCTOR</label>
+                <select class="form-select genD" asp-for="IdDoctor">
+                    <option value="" selected disabled>Seleccione un doctor</option>
+                    @foreach (var doctor in ViewBag.doctor)
+                    {
+                        var doctor1 = (ProyectoDesarrollo.Models.Doctor)doctor;
+                        <option value="@doctor1.IdDoctor">@doctor1.NomDoctor</option>
+                    }
+                </select>
+                <label class="form-label fecPL">FECHA</label>
+                <input class="form-control fecP" type="date" asp-for="FechaCitas" placeholder="fecha de cita" />
+                <label class="form-label genPL">HORARIO</label>
+                <select class="form-select genP" asp-for="IdHorario">
+                    <option value="" selected disabled>Seleccione un horario</option>
+                    @foreach (var horario in ViewBag.horario)
+                    {
+                        var horario1 = (ProyectoDesarrollo.Models.Horario)horario;
+                        <option value="@horario1.IdHorario">@horario1.Hora</option>
+                    }
+                </select>
+            <div class="col-12">
+                <button class="btn btn-primary buttonS" asp-action="ModificarCitaS">MODIFICAR</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

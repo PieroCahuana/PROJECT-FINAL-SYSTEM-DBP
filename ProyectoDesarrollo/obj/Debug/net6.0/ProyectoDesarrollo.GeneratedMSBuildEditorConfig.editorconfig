@@ -1,0 +1,125 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = ProyectoDesarrollo
+build_property.RootNamespace = ProyectoDesarrollo
+build_property.ProjectDir = C:\Users\USER\3D Objects\ProyectoDesarrollo\ProyectoDesarrollo\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\USER\3D Objects\ProyectoDesarrollo\ProyectoDesarrollo
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/USER/3D Objects/ProyectoDesarrollo/ProyectoDesarrollo/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/3D Objects/ProyectoDesarrollo/ProyectoDesarrollo/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/3D Objects/ProyectoDesarrollo/ProyectoDesarrollo/Views/Proyecto/EditarAdminP.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJveWVjdG9cRWRpdGFyQWRtaW5QLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/3D Objects/ProyectoDesarrollo/ProyectoDesarrollo/Views/Proyecto/EditarCitaS.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJveWVjdG9cRWRpdGFyQ2l0YVMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/3D Objects/ProyectoDesarrollo/ProyectoDesarrollo/Views/Proyecto/Editardoctor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJveWVjdG9cRWRpdGFyZG9jdG9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/3D Objects/ProyectoDesarrollo/ProyectoDesarrollo/Views/Proyecto/EditarDoctorP.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJveWVjdG9cRWRpdGFyRG9jdG9yUC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/3D Objects/ProyectoDesarrollo/ProyectoDesarrollo/Views/Proyecto/EditardoctorS.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJveWVjdG9cRWRpdGFyZG9jdG9yUy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/3D Objects/ProyectoDesarrollo/ProyectoDesarrollo/Views/Proyecto/EditarpacienteA.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJveWVjdG9cRWRpdGFycGFjaWVudGVBLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/3D Objects/ProyectoDesarrollo/ProyectoDesarrollo/Views/Proyecto/EditarpacienteD.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJveWVjdG9cRWRpdGFycGFjaWVudGVELmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/3D Objects/ProyectoDesarrollo/ProyectoDesarrollo/Views/Proyecto/EditarPacienteP.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJveWVjdG9cRWRpdGFyUGFjaWVudGVQLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/3D Objects/ProyectoDesarrollo/ProyectoDesarrollo/Views/Proyecto/EditarpacienteS.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJveWVjdG9cRWRpdGFycGFjaWVudGVTLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/3D Objects/ProyectoDesarrollo/ProyectoDesarrollo/Views/Proyecto/Editarsecretaria.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJveWVjdG9cRWRpdGFyc2VjcmV0YXJpYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/3D Objects/ProyectoDesarrollo/ProyectoDesarrollo/Views/Proyecto/EditarSecretariaP.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJveWVjdG9cRWRpdGFyU2VjcmV0YXJpYVAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/3D Objects/ProyectoDesarrollo/ProyectoDesarrollo/Views/Proyecto/InAdministrador.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJveWVjdG9cSW5BZG1pbmlzdHJhZG9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/3D Objects/ProyectoDesarrollo/ProyectoDesarrollo/Views/Proyecto/InDoctor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJveWVjdG9cSW5Eb2N0b3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/3D Objects/ProyectoDesarrollo/ProyectoDesarrollo/Views/Proyecto/Inicio.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJveWVjdG9cSW5pY2lvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/3D Objects/ProyectoDesarrollo/ProyectoDesarrollo/Views/Proyecto/InPaciente.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJveWVjdG9cSW5QYWNpZW50ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/3D Objects/ProyectoDesarrollo/ProyectoDesarrollo/Views/Proyecto/InSecretaria.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJveWVjdG9cSW5TZWNyZXRhcmlhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/3D Objects/ProyectoDesarrollo/ProyectoDesarrollo/Views/Proyecto/PrincipalAdministrador.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJveWVjdG9cUHJpbmNpcGFsQWRtaW5pc3RyYWRvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/3D Objects/ProyectoDesarrollo/ProyectoDesarrollo/Views/Proyecto/PrincipalDoctor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJveWVjdG9cUHJpbmNpcGFsRG9jdG9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/3D Objects/ProyectoDesarrollo/ProyectoDesarrollo/Views/Proyecto/PrincipalPaciente.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJveWVjdG9cUHJpbmNpcGFsUGFjaWVudGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/3D Objects/ProyectoDesarrollo/ProyectoDesarrollo/Views/Proyecto/PrincipalSecretaria.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJveWVjdG9cUHJpbmNpcGFsU2VjcmV0YXJpYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/3D Objects/ProyectoDesarrollo/ProyectoDesarrollo/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/3D Objects/ProyectoDesarrollo/ProyectoDesarrollo/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/3D Objects/ProyectoDesarrollo/ProyectoDesarrollo/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/3D Objects/ProyectoDesarrollo/ProyectoDesarrollo/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/3D Objects/ProyectoDesarrollo/ProyectoDesarrollo/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-b256swk6dl

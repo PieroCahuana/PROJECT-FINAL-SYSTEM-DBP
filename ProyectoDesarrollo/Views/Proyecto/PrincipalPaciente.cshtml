@@ -1,0 +1,159 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model ProyectoDesarrollo.Models.Modelos
+@{
+}
+<html>
+    <head>
+        <link href="~/css/EstilosPaginaPrincipal.css" rel="stylesheet" />
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script src="https://kit.fontawesome.com/fc0e7e3519.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/font-awesome.min.css">
+        <script src="~/js/JavaScript.js"></script>
+    </head>
+    <body class="Principal">
+        <nav>
+            <ul>
+                <li>
+                    <a asp-action="Inicio" id="logoLink" class="logo">
+                        <i class="fas fa-code"></i>
+                        <span class="nav-item">Clínica SaludTotal</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#Inicios">
+                    <i class="fas fa-home"></i>
+                    <span class="nav-item">Inicio</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#Perfil">
+                    <i class="fas fa-user"></i>
+                    <span class="nav-item">Perfil (Paciente)</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#ReservarCitas">
+                    <i class="far fa-calendar-check"></i>
+                    <span class="nav-item">Citas (@ViewBag.contadorcitas)</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a asp-action="Inicio" class="logout" id="logoutLink">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span class="nav-item">Salir</span>
+                    </a>
+                </li>
+            </ul>
+    </nav>
+    <main>
+        <section id="Inicios" class="pagina mostrar">
+            <form class="inicio">
+                <h1>BIENVENIDO</h1>
+                <h2>Bienvenido a la Clinica SaludTotal</H2>
+                <hr />
+
+                <h3>Horario:</h3>
+                <label>Desde: 7:00:00</label><br />
+                <label>Hasta: 18:00:00</label><br />
+                <hr />
+
+                <h3>Direccion:</h3>
+                <label>Av. Santa Rosa #1234</label><br />
+                <hr />
+
+                <h3>Contactos:</h3>
+                <label>Telfono: 951-120-000</label><br />
+                <label>Correo: ClinicaSaludTotal@gmail.com</label><br />
+                </form>
+                <img src="~/css/hospital_health_clinic_urban_buildings_medical_icon_128575.png" />
+        </section>
+
+        <section id="Perfil" class="pagina">
+            <h1 class="Listar">Perfil:</h1>
+                <form class="Listar form-container">
+                    <table class="table table-bordered">
+                        <tr class="encabezado">
+                            <td>CODIGO</td>
+                            <td>NOMBRE</td>
+                            <td>APELLIDO</td>
+                            <td>DNI</td>
+                            <td>FECHA DE NACIMIENTO</td>
+                            <td>GENERO</td>
+                            <td>TELEFONO</td>
+                            <td>USUARIO</td>
+                            <td>CONTRASEÑA</td>
+                            <td></td>
+                        </tr>
+                        <tbody>
+                            <tr>
+                                <td>@ViewBag.perfil.IdPaciente</td>
+                                <td>@ViewBag.perfil.NomPaciente</td>
+                                <td>@ViewBag.perfil.ApePaciente</td>
+                                <td>@ViewBag.perfil.DniPaciente</td>
+                                <td>@ViewBag.perfil.NacPaciente.ToShortDateString()</td>
+                                <td>@ViewBag.perfil.IdGeneroNavigation?.NomGenero</td>
+                                <td>@ViewBag.perfil.TelPaciente</td>
+                                <td>@ViewBag.perfil.UsuPaciente</td>
+                                <td>@ViewBag.perfil.ContraPaciente</td>
+                                 <td><a asp-action="EditarPacienteP" asp-route-id="@ViewBag.perfil.IdPaciente" class="EditarP"><i class='fas fa-edit'></i></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+        </section>
+
+        <section id="ReservarCitas" class="pagina">
+            <h1 class="Listar">Gestion de citas:</h1>
+                <form class="Listar form-container">
+                <button onclick="" class="crear">Reservar citas</button>
+                    <table class="table table-bordered">
+                    <tr class="encabezado">
+                        <td>CODIGO</td>
+                        <td>FECHA</td>
+                        <td>ESTADO</td>
+                        <td>DOCTOR</td>
+                        <td>HORA</td>
+                        <td>ESPECIALIDAD</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tbody>
+                        @foreach (var item in ViewBag.cita)
+                    {
+                        var citaObj = (ProyectoDesarrollo.Models.Cita)item;
+                     <tr>
+                        <td>@citaObj.IdCitas</td>
+                        <td>@citaObj.FechaCitas.ToShortDateString()</td>
+                        <td>@citaObj.IdEstadosNavigation?.NomEstados</td>
+                        <td>@citaObj.IdDoctorNavigation?.NomDoctor</td>
+                        <td>@citaObj.IdHorarioNavigation?.Hora</td>                        
+                        <td>@citaObj.IdEspecialidadNavigation?.NomEspecialidad</td>
+                        <td><a onclick="abrirModalPC('@citaObj.IdCitas')" class="EliminarS"><i class="fa fa-trash-o"></i></a></td>
+                     </tr>
+
+                    }
+                </tbody>
+                </table>
+                </form>        
+        </section>
+
+        <!-- /*Eliminar cita*/ -->
+            <div id="miModalPC" class="modal">
+            <div class="modal-contenido">
+                <span class="cerrar" onclick="cerrarModalPC()">&times;</span>
+                <h2>Confirmar eliminación</h2>
+                <p>¿Estás seguro de que deseas eliminar esta cita?</p>
+                <button class="btnEliminar" onclick="eliminarCitaPC()">Aceptar</button>
+                <button class="btnEliminarM" onclick="cerrarModalPC()">Cancelar</button>
+            </div>
+            </div>
+    </main>
+    </body>
+    <script src="~/js/PaginasPrincipales.js"></script>
+    <script src="~/js/JavaScript.js"></script>
+</html>

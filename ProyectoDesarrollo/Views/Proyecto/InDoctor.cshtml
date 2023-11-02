@@ -1,0 +1,29 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model ProyectoDesarrollo.Models.Doctor
+@{
+}
+<html>
+    <head>
+        <link href="~/css/Estilos.css" rel="stylesheet" />
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script src="https://kit.fontawesome.com/fc0e7e3519.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="otraCabecera">
+        <label class="IniciarSesion">Clínica SaludTotal</label>
+        <i class="fas fa-clinic-medical"></i>
+    </div>
+    <label class="titulo">DOCTOR LOGIN</label>
+    <form class="IniciarSesion">
+        <div class ="IniciarSesion">
+            <input class="IniciarDoctor" type="text" placeholder="User" name="usuD"/><br  />
+            <input class="IniciarDoctor" type="password" placeholder="Password" name="contraD"/><br />
+                <button class="IniciarDoctor">LOGIN</button>
+                <button class="IniciarDoctor" asp-action="Inicio">RETURN</button>
+            </div>
+        </form>
+    </body>
+    <script src="~/js/Validar.js"></script>
+</html>

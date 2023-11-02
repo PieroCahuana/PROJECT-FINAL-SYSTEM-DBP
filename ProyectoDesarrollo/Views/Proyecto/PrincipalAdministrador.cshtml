@@ -1,0 +1,441 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model ProyectoDesarrollo.Models.Modelos
+@{
+}
+<html>
+<head>
+    <link href="~/css/EstilosPaginaPrincipal.css" rel="stylesheet" />
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://kit.fontawesome.com/fc0e7e3519.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/font-awesome.min.css">
+    <script src="~/js/JavaScript.js"></script>
+</head>
+    <body>
+        <nav>
+            <ul>
+                <li>
+                    <a asp-action="Inicio" id="logoLink" class="logo">
+                        <i class="fas fa-code"></i>
+                        <span class="nav-item">Clínica SaludTotal</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#Inicios">
+                        <i class="fas fa-home"></i>
+                        <span class="nav-item">Inicio</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#Perfil">
+                        <i class="fas fa-user"></i>
+                        <span class="nav-item">Perfil (Administrador)</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#Secretarias">
+                        <i class="fa fa-female"></i>
+                        <span class="nav-item">Secretarias (@ViewBag.contadorSecretaria)</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#Doctores">
+                        <i class="fa fa-user-md"></i>
+                        <span class="nav-item">Doctores (@ViewBag.contadorDoctor)</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#Consultorios">
+                        <i class="fa fa-medkit"></i>
+                        <span class="nav-item">Consultorios (@ViewBag.contadorEspecilidades)</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#Pacientes" >
+                        <i class="fa fa-users"></i>
+                        <span class="nav-item">Pacientes (@ViewBag.contadorPaciente)</span>
+                    </a>
+                </li>
+                <li>
+                    <a asp-action="Inicio" id="logoutLink" class="logout">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span class="nav-item">Salir</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <main>
+            <section id="Inicios" class="pagina">
+                <form class="inicio">
+                <h1>BIENVENIDO</h1>
+                <h2>Bienvenido a la Clinica SaludTotal</H2>
+                <hr />
+
+                <h3>Horario:</h3>
+                <label>Desde: 7:00:00</label><br />
+                <label>Hasta: 18:00:00</label><br />
+                <hr />
+
+                <h3>Direccion:</h3>
+                <label>Av. Santa Rosa #1234</label><br />
+                <hr />
+
+                <h3>Contactos:</h3>
+                <label>Telfono: 951-120-000</label><br />
+                <label>Correo: ClinicaSaludTotal@gmail.com</label><br />
+                </form>
+                <img src="~/css/hospital_health_clinic_urban_buildings_medical_icon_128575.png" />
+            </section>
+
+            <section id="Perfil" class="pagina">
+                <h1 class="Listar">Perfil:</h1>
+                <form class="Listar form-container">
+                    <table class="table table-bordered">
+                        <tr class="encabezado">
+                            <td>CODIGO</td>
+                            <td>NOMBRE</td>
+                            <td>APELLIDO</td>
+                            <td>DNI</td>
+                            <td>USUARIO</td>
+                            <td>CONTRASEÑA</td>
+                            <td></td>
+                        </tr>
+                        <tbody>
+                            <tr>
+                                <td>@ViewBag.perfil.IdAdministrador</td>
+                                <td>@ViewBag.perfil.NomAdministrador</td>
+                                <td>@ViewBag.perfil.ApeAdministrador</td>
+                                <td>@ViewBag.perfil.DniAdministrador</td>
+                                <td>@ViewBag.perfil.UsuAdministrador</td>
+                                <td>@ViewBag.perfil.ContraAdministrador</td>
+                                 <td><a asp-action="EditarAdminP" asp-route-id="@ViewBag.perfil.IdAdministrador" class="EditarS"><i class='fas fa-edit'></i></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </section>
+
+            <section id="Secretarias" class="pagina">
+                <h1 class="Listar">Gestion de secretarias:</h1>
+                <form class="Listar form-container">
+                <button onclick="abrirGrabarAS()" class="crear">Registrar secretaria</button>
+                <table class="table table-bordered">
+                    <tr class="encabezado">
+                        <td>CODIGO</td>
+                        <td>NOMBRE</td>
+                        <td>APELLIDO</td>
+                        <td>DNI</td>
+                        <td>TELEFONO</td>
+                        <td>USUARIO</td>
+                        <td>CONTRASEÑA</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tbody>
+                        @foreach (var item in ViewBag.secretarias)
+                    {
+                        var secretariasObj = (ProyectoDesarrollo.Models.Secretarium)item;
+                     <tr>
+                        <td>@secretariasObj.IdSecretaria</td>
+                        <td>@secretariasObj.NomSecretaria</td>
+                        <td>@secretariasObj.ApeSecretaria</td>
+                        <td>@secretariasObj.DniSecretaria</td>                        
+                        <td>@secretariasObj.TelSecretaria</td>
+                        <td>@secretariasObj.UsuSecretaria</td>
+                        <td>@secretariasObj.ContraSecretaria</td>
+                        <td><a onclick="abrirModalAS('@secretariasObj.IdSecretaria')" class="EliminarS"><i class="fa fa-trash-o"></i></a></td>
+                        <td><a asp-action="Editarsecretaria" asp-route-id="@secretariasObj.IdSecretaria" class="EditarS"><i class='fas fa-edit'></i></a></td>
+                     </tr>
+
+                    }
+                </tbody>
+                </table>
+                </form>
+            </section>
+
+            <section id="Doctores" class="pagina">
+                <h1 class="Listar">Gestion de doctores:</h1>
+                <form class="Listar form-container">
+                <button onclick="abrirGrabarAD()" class="crear">Registrar doctor</button>
+                <table class="table table-bordered">
+                    <tr class="encabezado">
+                        <td>CODIGO</td>
+                        <td>NOMBRE</td>
+                        <td>APELLIDO</td>
+                        <td>DNI</td>
+                        <td>TELEFONO</td>
+                        <td>ESPECIALIDAD</td>
+                        <td>USUARIO</td>
+                        <td>CONTRASEÑA</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tbody>
+                        @foreach (var item in ViewBag.doctor)
+                    {
+                        var doctorObj = (ProyectoDesarrollo.Models.Doctor)item;
+                     <tr>
+                        <td>@doctorObj.IdDoctor</td>
+                        <td>@doctorObj.NomDoctor</td>
+                        <td>@doctorObj.ApeDoctor</td>
+                        <td>@doctorObj.DniDoctor</td>
+                        <td>@doctorObj.TelDoctor</td>
+                        <td>@doctorObj.IdEspecialidadNavigation?.NomEspecialidad</td>
+                        <td>@doctorObj.UsuDoctor</td>
+                        <td>@doctorObj.ContraDoctor</td>
+                        <td><a onclick="abrirModalAD('@doctorObj.IdDoctor')" class="EliminarD"><i class="fa fa-trash-o"></i></a></td>
+                        <td><a  asp-action="Editardoctor" asp-route-id="@doctorObj.IdDoctor" class="EditarD"><i class='fas fa-edit'></i></a></td>
+                     </tr>
+
+                    }
+                </tbody>
+                </table>
+                </form>
+            </section>
+
+            <section id="Consultorios" class="pagina">
+                <form>
+                <button onclick="abrirGrabarAE()" class="crearEspecialidad">Registrar nueva especialidad</button>
+                @{
+                    Dictionary<string, List<string>> EspecialidadesNombres = new Dictionary<string, List<string>>();
+
+                    foreach (var especialidad in ViewBag.doctor)
+                    {
+                        var especialidad1 = (ProyectoDesarrollo.Models.Doctor)especialidad;
+                        var EspecialidadActual = especialidad1.IdEspecialidadNavigation?.NomEspecialidad;
+
+                        if (!EspecialidadesNombres.ContainsKey(EspecialidadActual))
+                        {
+                            EspecialidadesNombres[EspecialidadActual] = new List<string>();
+                        }
+
+                        EspecialidadesNombres[EspecialidadActual].Add(especialidad1.NomDoctor);
+                    }
+                }
+
+                <table class="TblEspecialidad">
+                    <tr>
+                        <th class="tbl-header tbl-header-right">ESPECIALIDADES</th>
+                        <th class="tbl-header tbl-header-left">DOCTORES</th>
+                    </tr>
+                    @foreach (var especilidadNombres in EspecialidadesNombres)
+                    {
+                        <tr>
+                            <td class="tbl-key">@especilidadNombres.Key</td>
+                            <td>
+                                <ul class="tbl-list">
+                                    @foreach (var nombre in especilidadNombres.Value)
+                                    {
+                                        <li>- @nombre</li>
+                                    }
+                                </ul>
+                            </td>
+                        </tr>
+                    }
+                </table>
+                </form>
+            </section>
+
+            <section id="Pacientes" class="pagina">
+                <h1 class="Listar">Gestion de pacientes:</h1>
+                <form class="Listar form-container">
+                <button onclick="abrirGrabarAP()" class="crear">Registrar pacientes</button>
+                <table class="table table-bordered">
+                    <tr class="encabezado">
+                        <td>CODIGO</td>
+                        <td>NOMBRE</td>
+                        <td>APELLIDO</td>
+                        <td>DNI</td>
+                        <td>FECHA DE NACIMIENTO</td>
+                        <td>GENERO</td>
+                        <td>TELEFONO</td>
+                        <td>USUARIO</td>
+                        <td>CONTRASEÑA</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tbody>
+                        @foreach (var item in ViewBag.pacientes)
+                    {
+                        var pacienteObj = (ProyectoDesarrollo.Models.Paciente)item;
+                     <tr>
+                        <td>@pacienteObj.IdPaciente</td>
+                        <td>@pacienteObj.NomPaciente</td>
+                        <td>@pacienteObj.ApePaciente</td>
+                        <td>@pacienteObj.DniPaciente</td>
+                        <td>@pacienteObj.NacPaciente.ToShortDateString()</td>
+                        <td>@pacienteObj.IdGeneroNavigation?.NomGenero</td>                        
+                        <td>@pacienteObj.TelPaciente</td>
+                        <td>@pacienteObj.UsuPaciente</td>
+                        <td>@pacienteObj.ContraPaciente</td>
+                        <td><a onclick="abrirModalAP('@pacienteObj.IdPaciente')" class="EliminarP"><i class="fa fa-trash-o"></i></a></td>
+                        <td><a asp-action="EditarpacienteA" asp-route-id="@pacienteObj.IdPaciente" class="EditarP"><i class='fas fa-edit'></i></a></td>
+                     </tr>
+                    }
+                </tbody>
+                </table>
+                </form>
+            </section>
+
+            <!-- /*Eliminar Paciente*/ -->
+            <div id="miModalAP" class="modal">
+            <div class="modal-contenido">
+                <span class="cerrar" onclick="cerrarModalAP()">&times;</span>
+                <h2>Confirmar eliminación</h2>
+                <p>¿Estás seguro de que deseas eliminar este paciente?</p>
+                <button class="btnEliminar" onclick="eliminarPacienteAP()">Aceptar</button>
+                <button class="btnEliminarM" onclick="cerrarModalAP()">Cancelar</button>
+            </div>
+             </div>
+
+             <!-- /*Eliminar doctor*/ -->
+            <div id="miModalAD" class="modal">
+            <div class="modal-contenido">
+                <span class="cerrar" onclick="cerrarModalAD()">&times;</span>
+                <h2>Confirmar eliminación</h2>
+                <p>¿Estás seguro de que deseas eliminar este doctor?</p>
+                <button class="btnEliminar" onclick="eliminarPacienteAD()">Aceptar</button>
+                <button class="btnEliminarM" onclick="cerrarModalAD()">Cancelar</button>
+            </div>
+            </div>
+
+            <!-- /*Eliminar secretaria*/ -->
+            <div id="miModalAS" class="modal">
+            <div class="modal-contenido">
+                <span class="cerrar" onclick="cerrarModalAS()">&times;</span>
+                <h2>Confirmar eliminación</h2>
+                <p>¿Estás seguro de que deseas eliminar esta secretaria?</p>
+                <button class="btnEliminar" onclick="eliminarPacienteAS()">Aceptar</button>
+                <button class="btnEliminarM" onclick="cerrarModalAS()">Cancelar</button>
+            </div>
+            </div>
+
+            <!-- /*Grabar Doctor*/ -->
+            <div id="GrabarAD" class="modal">
+            <div class="modal-contenidoD">
+                <span class="cerrar" onclick="cerrarGrabarAD()">&times;</span>
+                 <form class="row g-3" asp-controller="Proyecto" asp-action="GrabardoctorA">
+                    <div class="col-md-6">
+                        <input type="hidden" asp-for="Doctor.IdDoctor" placeholder="Ingrese el codigo" />
+                        <label class="form-label nomDL">NOMBRE</label>
+                        <input class="form-control nomD" type="text" asp-for="Doctor.NomDoctor" placeholder="Ingrese el nombre" />
+                        <label class="form-label apeDL">APELLIDO</label>
+                        <input class="form-control apeD" type="text" asp-for="Doctor.ApeDoctor" placeholder="Ingrese el apellido" />
+                        <label class="form-label dniDL">DNI</label>
+                        <input class="form-control dniD" type="number" asp-for="Doctor.DniDoctor" placeholder="Ingrese el dni" />
+                        <label class="form-label genDL">ESPECIALIDAD</label>
+                        <select class="form-select genD" asp-for="Doctor.IdEspecialidad">
+                            <option value=""selected disabled>Seleccione su especialidad</option>
+                            @foreach (var doctor in ViewBag.especialidad)
+                            {
+                                var doctor1 = (ProyectoDesarrollo.Models.Especialidad)doctor;
+                                <option value="@doctor1.IdEspecialidad">@doctor1.NomEspecialidad</option>
+                            }
+                        </select>
+                        </div>
+                    <div class="col-md-6">
+                        <label class="form-label telDL">TELEFONO</label>
+                        <input class="form-control telD" type="number" asp-for="Doctor.TelDoctor" placeholder="Ingrese el telefono" />
+                        <label class="form-label usuDL">USUARIO</label>
+                        <input class="form-control usuD" type="text" asp-for="Doctor.UsuDoctor" placeholder="Ingrese el usuario" />
+                        <label class="form-label contraDL">CONTRASEÑA</label>
+                        <input class="form-control contraD" type="password" asp-for="Doctor.ContraDoctor" placeholder="Ingrese la contraseña" />
+                        <button class="btnEliminarAD">Grabar</button>
+                    </div>
+                </form>
+                <button class="btnEliminarCD" onclick="cerrarGrabarAD()">Cancelar</button>
+            </div>
+            </div>
+
+            <!-- /*Grabar paciente*/ -->
+            <div id="GrabarAP" class="modal">
+            <div class="modal-contenidoP">
+                <span class="cerrar" onclick="cerrarGrabarAP()">&times;</span>
+                 <form class="row g-3" asp-controller="Proyecto" asp-action="GrabarpacienteA">
+                    <div class="col-md-6">
+                        <input type="hidden" asp-for="Paciente.IdPaciente" placeholder="Ingrese el codigo" />
+                        <label class="form-label nomPL">NOMBRE</label>
+                        <input class="form-control nomP" type="text" asp-for="Paciente.NomPaciente" placeholder="Ingrese el nombre" />
+                        <label class="form-label apePL">APELLIDO</label>
+                        <input class="form-control apeP" type="text" asp-for="Paciente.ApePaciente" placeholder="Ingrese el apellido" />
+                        <label class="form-label dniPL">DNI</label>
+                        <input class="form-control dniP" type="text" asp-for="Paciente.DniPaciente" placeholder="Ingrese el dni" />
+                        <label class="form-label fecPL">FECHA DE NACIMIENTO</label>
+                        <input class="form-control fecP" type="date" asp-for="Paciente.NacPaciente" placeholder="fecha de nacimiento" />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label genPL">GENERO</label>
+                        <select class="form-select genP" asp-for="Paciente.IdGenero">
+                        <option value=""selected disabled>Seleccione su genero</option>
+                            @foreach (var paciente in ViewBag.genero)
+                            {
+                                var paciente1 = (ProyectoDesarrollo.Models.Genero)paciente;
+                                <option value="@paciente1.IdGenero">@paciente1.NomGenero</option>
+                            }
+                        </select>
+                        <label class="form-label telPL">TELEFONO</label>
+                        <input class="form-control telP" type="text" asp-for="Paciente.TelPaciente" placeholder="Ingrese el telefono" />
+                        <label class="form-label usuPL">USUARIO</label>
+                        <input class="form-control usuP" type="text" asp-for="Paciente.UsuPaciente" placeholder="Ingrese el usuario" />
+                        <label class="form-label contraPL">CONTRASEÑA</label>
+                        <input class="form-control contraP" type="password" asp-for="Paciente.ContraPaciente" placeholder="Ingrese la contraseña" />
+                        <button class="btnEliminarAP">Grabar</button>
+                    </div>
+                </form>
+                <button class="btnEliminarCP" onclick="cerrarGrabarAP()">Cancelar</button>
+            </div>
+            </div>
+
+            <!-- /*Grabar secretaria*/ -->
+            <div id="GrabarAS" class="modal">
+            <div class="modal-contenidoP">
+                <span class="cerrar" onclick="cerrarGrabarAS()">&times;</span>
+                 <form class="row g-3" asp-controller="Proyecto" asp-action="Grabarsecretaria">
+                    <div class="col-md-6">
+                        <input type="hidden" asp-for="Secretarium.IdSecretaria" placeholder="Ingrese el codigo" />
+                        <label class="form-label nomPL">NOMBRE</label>
+                        <input class="form-control nomP" type="text" asp-for="Secretarium.NomSecretaria" placeholder="Ingrese el nombre" />
+                        <label class="form-label apePL">APELLIDO</label>
+                        <input class="form-control apeP" type="text" asp-for="Secretarium.ApeSecretaria" placeholder="Ingrese el apellido" />
+                        <label class="form-label dniPL">DNI</label>
+                        <input class="form-control dniP" type="text" asp-for="Secretarium.DniSecretaria" placeholder="Ingrese el dni" />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label telPL">TELEFONO</label>
+                        <input class="form-control telP" type="text" asp-for="Secretarium.TelSecretaria" placeholder="Ingrese el telefono" />
+                        <label class="form-label usuPL">USUARIO</label>
+                        <input class="form-control usuP" type="text" asp-for="Secretarium.UsuSecretaria" placeholder="Ingrese el usuario" />
+                        <label class="form-label contraPL">CONTRASEÑA</label>
+                        <input class="form-control contraP" type="password" asp-for="Secretarium.ContraSecretaria" placeholder="Ingrese la contraseña" />
+                        <button class="btnEliminarAP">Grabar</button>
+                    </div>
+                </form>
+                <button class="btnEliminarCP" onclick="cerrarGrabarAS()">Cancelar</button>
+            </div>
+            </div>
+
+            <!-- /*Grabar especialidad*/ -->
+            <div id="GrabarAE" class="modal">
+            <div class="modal-contenido">
+                <span class="cerrar" onclick="cerrarGrabarAE()">&times;</span>
+                 <form class="row g-3" asp-controller="Proyecto" asp-action="Grabarespecialidad">
+                        <label class="form-label genDL">NUEVA ESPECIALIDAD</label>
+                        <input class="form-control genD" type="text" name="nombreEspecialidad" placeholder="Ingrese nueva especialidad" />
+                        <button class="btnEliminarAE">Grabar</button>
+                </form>
+                <button class="btnEliminarEE" onclick="cerrarGrabarAE()">Cancelar</button>
+            </div>
+            </div>
+        </main>
+    </body>
+    <script src="~/js/PaginasPrincipales.js"></script>
+    <script src="~/js/JavaScript.js"></script>
+</html>
+

@@ -1,0 +1,45 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model ProyectoDesarrollo.Models.Administrador
+@{
+}
+<html>
+<head>
+    <link href="~/css/agregar.css" rel="stylesheet" />
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://kit.fontawesome.com/fc0e7e3519.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="otraCabecera">
+        <label class="IniciarSesion">Clínica SaludTotal</label>
+        <i class="fas fa-clinic-medical"></i>
+    </div>
+    <form class="row g-3">
+        <div class="col-md-6">
+            <input type="hidden" asp-for="IdAdministrador" placeholder="Ingrese el codigo" />
+            <label class="form-label nomSL">NOMBRE</label>
+            <input class="form-control nomS" type="text" asp-for="NomAdministrador" placeholder="Ingrese el nombre" />
+            <span asp-validation-for="NomAdministrador" class="text-danger"></span>
+            <label class="form-label apeSL">APELLIDO</label>
+            <input class="form-control apeS" type="text" asp-for="ApeAdministrador" placeholder="Ingrese el apellido" />
+            <span asp-validation-for="ApeAdministrador" class="text-danger"></span>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label dniSL">DNI</label>
+            <input class="form-control dniS" type="number" asp-for="DniAdministrador" placeholder="Ingrese el dni" />
+            <span asp-validation-for="DniAdministrador" class="text-danger"></span>
+            <label class="form-label usuSL">USUARIO</label>
+            <input class="form-control usuS" type="text" asp-for="UsuAdministrador" placeholder="Ingrese el usuario" />
+            <span asp-validation-for="UsuAdministrador" class="text-danger"></span>
+            <label class="form-label contraSL">CONTRASEÑA</label>
+            <input class="form-control contraS" type="text" asp-for="ContraAdministrador" placeholder="Ingrese la contraseña" />
+            <span asp-validation-for="ContraAdministrador" class="text-danger"></span>
+            <div class="col-12">
+                <button class="btn btn-primary buttonS" asp-action="ModificarAdminP">MODIFICAR</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

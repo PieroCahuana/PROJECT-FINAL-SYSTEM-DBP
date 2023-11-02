@@ -1,0 +1,317 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: 'Roboto';
+    background: white;
+}
+/*Eliminar cabecera inicial*/
+header {
+    display: none;
+}
+/*pie de pagina*/
+footer {
+    display: none;
+}
+/*agregando de cabecera a el titulo*/
+.otraCabecera {
+    background-color: white; 
+    color: black; 
+    display: flex; /* convierte el contenedor en un flexbox */
+    align-items: center; 
+    justify-content: left; 
+    padding: 10px;
+    width: 100%; 
+    position: fixed; /* fija el header en la pantalla */
+    top: 0; 
+    left: 0;
+}
+/*label del titulo*/
+.IniciarSesion {
+    color: #6b95a5;
+    font-size: 60px;
+}
+/*icono del titulo*/
+.fas {
+    font-size: 60px;
+    margin: 15px;
+    position: relative;
+    top: -10px;
+    color: #6b95a5;
+}
+/*Formulario*/
+form {
+    background: #eaeaea;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed; /* fija el header en la pantalla */
+    top: 95px;
+    left: 10px;
+    width: 99.2%;
+    height: 92%;
+}
+/*seleccione*/
+.h1 {
+    background: white;
+    font-size: 70px;
+    position: relative;
+    top: 880px;
+    left: 0px;
+    width: 92%;
+}
+    .h1 .fas {
+        font-size: 60px;
+        margin: 15px;
+        position: relative;
+        top: 0px;
+        color: black;
+    }
+/*div Secretaria*/
+.Secretaria {
+    background: white;
+    font-size: 45px;
+    position: relative;
+    top: 920px;
+    left: -665px;
+    width: 20%;
+}
+    /*palabra secretaria*/
+    .Secretaria label {
+        width: 90%;
+        position: relative;
+        top: -40px;
+        left: -60px;
+    }
+    .Secretaria a {
+        width: 90%;
+        position: relative;
+        top: -40px;
+        left: 60px;
+        color: #6b95a5;
+        text-decoration: none;
+    }
+
+/*div Doctor*/
+.Doctor {
+    background: white;
+    font-size: 45px;
+    position: relative;
+    top: 314.5px;
+    left: -225px;
+    width: 20%;
+}
+    /*palabra doctor*/
+    .Doctor label {
+        width: 100%;
+        position: relative;
+        top: -50px;
+        left: -93px;
+    }
+    .Doctor a {
+        width: 100%;
+        position: relative;
+        top: -50px;
+        left: 60px;
+        color: #6b95a5;
+        text-decoration: none;
+    }
+/*div Paciente*/
+.Paciente {
+    background: white;
+    font-size: 45px;
+    position: relative;
+    top: -295px;
+    left: 225px;
+    width: 20%;
+}
+    /*palabra paciente*/
+    .Paciente label {
+        width: 100%;
+        position: relative;
+        top: -50px;
+        left: -80px;
+    }
+    .Paciente a {
+        width: 100%;
+        position: relative;
+        top: -50px;
+        left: 60px;
+        color: #6b95a5;
+        text-decoration: none;
+    }
+/*div Administrador*/
+.Administrador {
+    background: white;
+    font-size: 45px;
+    position: relative;
+    top: -900px;
+    left: 665px;
+    width: 20%;
+}
+    /*palabra administrador*/
+    .Administrador label {
+        width: 100%;
+        position: relative;
+        top: -50px;
+        left: -40px;
+    }
+    .Administrador a {
+        width: 100%;
+        position: relative;
+        top: -50px;
+        left: 60px;
+        color: #6b95a5;
+        text-decoration: none;
+    }
+/*iconos*/
+.icon {
+    font-size: 300px;
+}
+/*linea*/
+hr {
+    height: 5px; /* altura de la línea */
+    background-color: black; /* color de fondo de la línea */
+    border: 1px; /* eliminar el borde por defecto */
+    margin: 10px 0; /* margen superior e inferior */
+    position: relative;
+    top: -70px;
+    left: 45px;
+    width:80%;
+    color:black;
+}
+/*Pagina iniciar sesion*/
+/*div para iniciar sesion*/
+div.IniciarSesion {
+    width: 45%;
+    position: relative;
+    padding: 45px 0;
+    top: -0px;
+    left: 0px;
+    text-align: center;
+    background: white;
+    font-size: 45px;
+    height: 730px;
+    z-index: 0;
+}
+/*Contenido Secretaria*/
+.titulo {
+    color: white;
+    background: #6b95a5;
+    font-size: 55px;
+    position: relative;
+    top: 100px;
+    left: 0px;
+    width: 60%;
+    padding: 20px 0;
+    margin-top: 20px;
+    z-index: 1;
+}
+
+input.IniciarSecretaria {
+    display: inline-block;
+    width: 85%;
+    padding: 10px 0;
+    position: relative;
+    top: 80px;
+    left: 0px;
+    margin-bottom: 60px;
+    background:#b1b3bb;
+}
+
+button.IniciarSecretaria {
+    display: inline-block;
+    width: 85%;
+    padding: 10px 0;
+    border-radius: 25px;
+    color: white;
+    background: #6b95a5;
+    position: relative;
+    top: 80px;
+    left: 0px;
+    margin-bottom: 60px;
+}
+/*Contenido Doctor*/
+
+input.IniciarDoctor {
+    display: inline-block;
+    width: 85%;
+    padding: 10px 0;
+    position: relative;
+    top: 80px;
+    left: 0px;
+    margin-bottom: 60px;
+    background:#b1b3bb;
+}
+
+button.IniciarDoctor {
+    display: inline-block;
+    width: 85%;
+    padding: 10px 0;
+    border-radius: 25px;
+    color: white;
+    background: #6b95a5;
+    position: relative;
+    top: 80px;
+    left: 0px;
+    margin-bottom: 60px;
+}
+/*Contenido Paciente*/
+
+input.IniciarPaciente {
+    display: inline-block;
+    width: 85%;
+    padding: 10px 0;
+    position: relative;
+    top: 80px;
+    left: 0px;
+    margin-bottom: 60px;
+    background: #b1b3bb;
+}
+
+button.IniciarPaciente {
+    display: inline-block;
+    width: 85%;
+    padding: 10px 0;
+    border-radius: 25px;
+    color: white;
+    background: #6b95a5;
+    position: relative;
+    top: 80px;
+    left: 0px;
+    margin-bottom: 60px;
+}
+/*Contenido Administrador*/
+
+input.IniciarAdministrador {
+    display: inline-block;
+    width: 85%;
+    padding: 10px 0;
+    position: relative;
+    top: 80px;
+    left: 0px;
+    margin-bottom: 60px;
+    background: #b1b3bb;
+}
+
+button.IniciarAdministrador {
+    display: inline-block;
+    width: 85%;
+    padding: 10px 0;
+    border-radius: 25px;
+    color: white;
+    background: #6b95a5;
+    position: relative;
+    top: 80px;
+    left: 0px;
+    margin-bottom: 60px;
+}
+span {
+    font-size: 22px;
+}

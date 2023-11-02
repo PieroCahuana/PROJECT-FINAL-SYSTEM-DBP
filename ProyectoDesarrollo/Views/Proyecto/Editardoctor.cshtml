@@ -1,0 +1,58 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model ProyectoDesarrollo.Models.Doctor
+@{
+}
+<html>
+    <head>
+        <link href="~/css/agregar.css" rel="stylesheet" />
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script src="https://kit.fontawesome.com/fc0e7e3519.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        </head>
+    <body>
+        <div class="otraCabecera">
+            <label class="IniciarSesion">Clínica SaludTotal</label>
+            <i class="fas fa-clinic-medical"></i>
+        </div>
+
+    <form class="row g-3">
+        <div class="col-md-6">
+            <input type="hidden" asp-for="IdDoctor" placeholder="Ingrese el codigo" />
+            <label class="form-label nomDL">NOMBRE</label>
+            <input class="form-control nomD" type="text" asp-for="NomDoctor" placeholder="Ingrese el nombre" />
+            <span asp-validation-for="NomDoctor" class="text-danger"></span>
+            <label class="form-label apeDL">APELLIDO</label>
+            <input class="form-control apeD" type="text" asp-for="ApeDoctor" placeholder="Ingrese el apellido" />
+            <span asp-validation-for="ApeDoctor" class="text-danger"></span>
+            <label class="form-label dniDL">DNI</label>
+            <input class="form-control dniD" type="number" asp-for="DniDoctor" placeholder="Ingrese el dni" />
+            <span asp-validation-for="DniDoctor" class="text-danger"></span>
+            <label class="form-label genDL">ESPECIALIDAD</label>
+            </div>
+            <div class="col-md-6">
+            <select class="form-select genD" asp-for="IdEspecialidad">
+                @foreach (var doctor in ViewBag.especialidad)
+                {
+                    var doctor1 = (ProyectoDesarrollo.Models.Especialidad)doctor;
+                    <option value="@doctor1.IdEspecialidad">@doctor1.NomEspecialidad</option>
+                }
+            </select>
+            <span asp-validation-for="IdEspecialidad" class="text-danger"></span>
+            <label class="form-label telDL">TELEFONO</label>
+            <input class="form-control telD" type="number" asp-for="TelDoctor" placeholder="Ingrese el telefono" />
+            <span asp-validation-for="TelDoctor" class="text-danger"></span>
+            <label class="form-label usuDL">USUARIO</label>
+            <input class="form-control usuD" type="text" asp-for="UsuDoctor" placeholder="Ingrese el usuario" />
+            <span asp-validation-for="UsuDoctor" class="text-danger"></span>
+            <label class="form-label contraDL">CONTRASEÑA</label>
+            <input class="form-control contraD" type="text" asp-for="ContraDoctor" placeholder="Ingrese la contraseña" />
+            <span asp-validation-for="ContraDoctor" class="text-danger"></span>
+            <div class="col-12">
+                <button class="btn btn-primary buttonD" asp-action="ModificarDoctor">MODIFICAR</button>
+            </div>
+        </div>
+    </form>
+    </body>
+</html>

@@ -1,0 +1,60 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model ProyectoDesarrollo.Models.Paciente
+@{
+}
+<html>
+<head>
+    <link href="~/css/agregar.css" rel="stylesheet" />
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://kit.fontawesome.com/fc0e7e3519.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="otraCabecera">
+        <label class="IniciarSesion">Clínica SaludTotal</label>
+        <i class="fas fa-clinic-medical"></i>
+    </div>
+    <form class="row g-3">
+        <div class="col-md-6">
+            <input type="hidden" asp-for="IdPaciente" placeholder="Ingrese el codigo" />
+            <label class="form-label nomPL">NOMBRE</label>
+            <input class="form-control nomP" type="text" asp-for="NomPaciente" placeholder="Ingrese el nombre" />
+            <span asp-validation-for="NomPaciente" class="text-danger"></span>
+            <label class="form-label apePL">APELLIDO</label>
+            <input class="form-control apeP" type="text" asp-for="ApePaciente" placeholder="Ingrese el apellido" />
+            <span asp-validation-for="ApePaciente" class="text-danger"></span>
+            <label class="form-label dniPL">DNI</label>
+            <input class="form-control dniP" type="text" asp-for="DniPaciente" placeholder="Ingrese el dni" />
+            <span asp-validation-for="DniPaciente" class="text-danger"></span>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label fecPL">FECHA DE NACIMIENTO</label>
+            <input class="form-control fecP" type="date" asp-for="NacPaciente" placeholder="fecha de nacimiento" />
+            <span asp-validation-for="NacPaciente" class="text-danger"></span>
+            <label class="form-label genPL">GENERO</label>
+            <select class="form-select genP" asp-for="IdGenero">
+                @foreach (var paciente in ViewBag.genero)
+                {
+                    var paciente1 = (ProyectoDesarrollo.Models.Genero)paciente;
+                    <option value="@paciente1.IdGenero">@paciente1.NomGenero</option>
+                }
+            </select>
+            <span asp-validation-for="IdGenero" class="text-danger"></span>
+            <label class="form-label telPL">TELEFONO</label>
+            <input class="form-control telP" type="text" asp-for="TelPaciente" placeholder="Ingrese el telefono" />
+            <span asp-validation-for="TelPaciente" class="text-danger"></span>
+            <label class="form-label usuPL">USUARIO</label>
+            <input class="form-control usuP" type="text" asp-for="UsuPaciente" placeholder="Ingrese el usuario" />
+            <span asp-validation-for="UsuPaciente" class="text-danger"></span>
+            <label class="form-label contraPL">CONTRASEÑA</label>
+            <input class="form-control contraP" type="text" asp-for="ContraPaciente" placeholder="Ingrese la contraseña" />
+            <span asp-validation-for="ContraPaciente" class="text-danger"></span>
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary buttonP" asp-action="ModificarPacienteP">MODIFICAR</button>
+        </div>
+    </form>
+</body>
+</html>
